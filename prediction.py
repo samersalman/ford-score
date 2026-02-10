@@ -28,7 +28,9 @@ def compute_prediction(inputs: dict) -> dict:
     sbp = float(inputs.get("sbp", 120))
     hr = float(inputs.get("hr", 75))
     rr = float(inputs.get("rr", 16))
-    bmi = float(inputs.get("bmi", 25.0))
+    height_in = float(inputs.get("height_in", 68))
+    weight_lb = float(inputs.get("weight_lb", 170))
+    bmi = (weight_lb / (height_in ** 2)) * 703
     fracture_site = inputs.get("fracture_site", "Other")
     mechanism = inputs.get("mechanism", "Fall")
     transport = inputs.get("transport", "Ambulance/Air")
