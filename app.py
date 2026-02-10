@@ -85,7 +85,7 @@ if submitted:
 
     def highlight_current(row):
         if row["Risk Level"] == result["risk_label"]:
-            return ["background-color: #2d4a3e"] * len(row)
+            return ["background-color: #d4edda; color: #155724"] * len(row)
         return [""] * len(row)
 
     st.dataframe(
