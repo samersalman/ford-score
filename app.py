@@ -11,7 +11,17 @@ from prediction import compute_prediction
 st.set_page_config(page_title=MODEL_NAME, layout="wide")
 
 st.title(MODEL_NAME)
-st.markdown("Enter patient data below, then click **Calculate** to compute the FORD score.")
+
+with st.expander("About the FORD Score", expanded=False):
+    st.markdown(
+        "The **Fracture Orthopedic Risk of Discharge (FORD) Score** is a novel "
+        "bedside predictive tool for non-home discharge in orthopedic trauma patients.\n\n"
+        "It produces a score from **0–10** using patient demographics, ED vital signs, "
+        "injury characteristics, and prehospital/insurance factors. Higher scores indicate "
+        "greater risk of non-home discharge (e.g., rehab facility, skilled nursing).\n\n"
+        "**How to use:** Fill in the fields below, click **Calculate**, and review the "
+        "score, risk level, and component breakdown."
+    )
 
 # --- Build grouped variable structure ---
 groups = OrderedDict()
